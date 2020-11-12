@@ -1,75 +1,97 @@
-<!DOCTYPE html><html lang=en><head><meta charset=utf-8><meta http-equiv=X-UA-Compatible content="IE=edge"><meta name=viewport content="width=device-width,initial-scale=1"><link rel=icon href=https://go2joy.vn/images/logo.jpg><title>Go2Joy - website demo</title><link href=/static/css/app.ac770ee8e48e27e105faa4007d25741a.css rel=stylesheet></head><link rel=stylesheet href=https://use.fontawesome.com/releases/v5.7.0/css/all.css integrity=sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ crossorigin=anonymous><link href=https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css rel=stylesheet><link href=https://unpkg.com/boxicons@2.0.5/css/boxicons.min.css rel=stylesheet><script src=https://kit.fontawesome.com/986c6454d2.js crossorigin=anonymous></script><link rel=stylesheet href=https://unpkg.com/element-ui/lib/theme-chalk/index.css><script src=https://code.iconify.design/2/2.0.0-rc.1/iconify.min.js></script><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.0/semantic.min.css><link rel=stylesheet href=https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css integrity=sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN crossorigin=anonymous><script type=text/javascript src="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=places&key=AIzaSyDSLNsJc2hhS0PbO39zD2LH92y0CktRKb4&ver=3.exp"></script><style>.preloader {
-      position: fixed;
-      left: 0px;
-      top: 0px;
-      width: 100%;
-      height: 100%;
-      z-index: 9999;
-      background: url("https://wpamelia.com/wp-content/uploads/2018/11/ezgif-2-6d0b072c3d3f.gif")
-        50% 50% no-repeat rgb(249, 249, 249);
-      opacity: 1;
-    }</style><body><noscript></noscript><div id=preloaders class=preloader></div><div id=app></div><script type=text/javascript src=/static/js/manifest.2ae2e69a05c33dfc65f8.js></script><script type=text/javascript src=/static/js/vendor.fc71966ffb0f9108411c.js></script><script type=text/javascript src=/static/js/app.a940404d6a7b3a0846cc.js></script></body></html><script src=https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js></script><script src=https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.2/axios.min.js></script><script src=https://vivaco.com/demo/ventcamp/assets/js/jquery.countTo.js></script><script>// When the user scrolls down 80px from the top of the document, resize the navbar's padding and the logo's font size
-  window.onscroll = function() {
-    scrollFunction();
-  };
-  function scrollFunction() {
-    if (document.body.scrollTop > 1 || document.documentElement.scrollTop > 1) {
-      document.getElementById("navbar").style.position = "sticky";
-       document.getElementById("navbar").style.opacity = "0.9";
-    } else {
-      document.getElementById("navbar").style.position = "unset";
-    }
-  }
-  $(window).on("load", function() {
-    $(".preloader").fadeOut("slow");
-  });
+<!DOCTYPE html><html><head><title>Webslesson Tutorial | Bootstrap Multi Select Dropdown with Checkboxes using Jquery in PHP</title><script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script><script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script><link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"><script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script><script src="//cdnjs.cloudflare.com/ajax/libs/multiple-select/1.2.2/multiple-select.min.js"></script><link href="//cdnjs.cloudflare.com/ajax/libs/multiple-select/1.2.2/multiple-select.min.css" rel="stylesheet"/><style>.dropdown-submenu {
+    position: relative;
+}
 
-  $(document).ready(function() {
-    var my_posts = $("[rel=tooltip]");
+.dropdown-submenu>.dropdown-menu {
+    top: 0;
+    left: 100%;
+    margin-top: -6px;
+    margin-left: -1px;
+    -webkit-border-radius: 0 6px 6px 6px;
+    -moz-border-radius: 0 6px 6px;
+    border-radius: 0 6px 6px 6px;
+}
 
-    var size = $(window).width();
-    for (i = 0; i < my_posts.length; i++) {
-      the_post = $(my_posts[i]);
+.dropdown-submenu:hover>.dropdown-menu {
+    display: block;
+}
 
-      if (the_post.hasClass("invert") && size >= 767) {
-        the_post.tooltip({ placement: "left" });
-        the_post.css("cursor", "pointer");
-      } else {
-        the_post.tooltip({ placement: "rigth" });
-        the_post.css("cursor", "pointer");
-      }
-    }
-  });
+.dropdown-submenu>a:after {
+    display: block;
+    content: " ";
+    float: right;
+    width: 0;
+    height: 0;
+    border-color: transparent;
+    border-style: solid;
+    border-width: 5px 0 5px 5px;
+    border-left-color: #ccc;
+    margin-top: 5px;
+    margin-right: -10px;
+}
 
-  var a = 0;
-$(window).scroll(function() {
+.dropdown-submenu:hover>a:after {
+    border-left-color: #fff;
+}
 
-  var oTop = $('#counters').offset().top - window.innerHeight;
-  if (a == 0 && $(window).scrollTop() > oTop) {
-    $('.count').each(function() {
-      var $this = $(this),
-        countTo = $this.attr('data-count');
-      $({
-        countNum: $this.text()
-      }).animate({
-          countNum: countTo
-        },
+.dropdown-submenu.pull-left {
+    float: none;
+}
 
-        {
+.dropdown-submenu.pull-left>.dropdown-menu {
+    left: -100%;
+    margin-left: 10px;
+    -webkit-border-radius: 6px 0 6px 6px;
+    -moz-border-radius: 6px 0 6px 6px;
+    border-radius: 6px 0 6px 6px;
+}</style></head><body><a href="/dropdown1">demo1</a><style>/* Multiple select Checkbox */
 
-          duration: 3000,
-          easing: 'swing',
-          step: function() {
-            $this.text(Math.floor(this.countNum));
-          },
-          complete: function() {
-            $this.text(this.countNum);
-            //alert('finished');
-          }
+.sub-options {
+  padding-left: 20px;
+}
 
-        });
-    });
-    a = 1;
-  }
+.ms-parent {
+  max-width: 300px;
+}
 
-});</script>
+.m-hidden {
+  visibility: hidden;
+  height: 0px;
+}
+
+.single>label {
+  margin-bottom: 0px;
+}
+
+.single>label>input {
+  margin-right: 6px;
+}
+
+.single>label>span {
+  font-size: 14px;
+}
+
+.group>label {
+  font-weight: normal !important;
+}
+
+.privacy-or>label>input {
+  display: none;
+}
+
+.privacy-or>label>span {
+  display: block;
+  text-align: center;
+  color: red;
+}</style><br/><div class="container"><div class="d-flex mt-3"><div class="form-group mr-2 mb-0 privacy-tooltip"><select id="privacy" multiple><option disabled class="privacy-or">----- Or -----</option><optgroup label="Copywriting"><option value="1" class="sub-options">Articles</option><option value="2" class="sub-options">Blogposts</option><option value="3" class="sub-options">Guestposts</option><option value="4" class="sub-options">Press Releases</option></optgroup><optgroup label="Link Building"><option value="pugal" class="sub-options m-hidden">Link Building</option></optgroup><optgroup label="Miscellaneous"><option value="pugal" class="sub-options m-hidden">Miscellaneous</option></optgroup><optgroup label="Rankings"><option value="pugal" class="sub-options m-hidden">Rankings</option></optgroup><optgroup label="SEO Implementation"><option value="pugal" class="sub-options m-hidden">SEO Implementation</option></optgroup><optgroup label="SEO Plan"><option value="pugal" class="sub-options m-hidden">SEO Plan</option></optgroup></select></div></div></div><script>$(".group-css").on("click", function() {
+  $(this).sibling().hide();
+});
+$('#privacy').multipleSelect({
+ 
+  width: 220,
+  filter: true,
+  minimumCountSelected: 5,
+  ellipsis: true,
+  placeholder: 'Chọn danh mục',
+  position: "bottom"
+});</script></body></html>

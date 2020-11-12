@@ -1,0 +1,38 @@
+<!doctype html><html lang="en"><header><title>Example table</title><link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"></header><body><h1>Test</h1><button type="buttom" onclick="document.getElementById('demo').innerHTML = Date()">Click</button><div id="demo"><h2>123</h2></div><button type="buttom" onclick="document.getElementById('demo').style.display = 'none'">Hide</button><h1 id="demo1" style="display:none">567</h1><button type="buttom" onclick="doiMau()">123</button><script>function doiMau(){
+            document.getElementById('demo1').style.display='block'
+        }</script></body><script src="/js/vue.min.js"></script><script src="/js/axios.min.js"></script><script>var app = new Vue({
+        el: "#data",
+        data: {
+            message: "Hello World",
+            showTable:false
+        },
+        methods: {
+            clickShowTable : function(){
+                console.log('click1');
+                this.showTable = true
+
+            },
+            clickHideTable:function(){
+                console.log('click2');
+                this.showTable = false
+            }
+        },
+    })
+    var app = new Vue({
+        el: "#data1",
+        data: {
+            message: "xin chào",
+            table: 1
+        },
+        methods: {
+            onclickButtom(){
+                
+            }
+        },
+    })</script><script>var a = 1;
+    var b = 2;
+    function tinhTong(a,b){
+        var c = a + b;
+        print(c);
+
+    }</script><script src="/js/jquery.min.js"></script><script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script><script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script></html>
